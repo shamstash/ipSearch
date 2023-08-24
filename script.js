@@ -14,7 +14,7 @@ const getLocation = async(ip) => {
     locationOut.innerText = res.data.location.region
     timezoneOut.innerText = res.data.location.timezone
     ispOut.innerText = res.data.isp
-    mapfunc(res.data.location.lng,res.data.location.lat)
+    mapfunc(res.data.location.lng,res.data.location.lat,locationOut.innerText = res.data.location.region )
     console.log(res.data.location.lng,res.data.location.lat)
 }
 
@@ -26,7 +26,7 @@ subButton.addEventListener("click", function(){
 
 var map;
 
-function mapfunc(long, lat) {
+function mapfunc(long, lat, popupnz) {
     
     if (map) {
         map.off(); 
@@ -41,5 +41,5 @@ function mapfunc(long, lat) {
     }).addTo(map);
 
     L.marker([lat, long]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        .bindPopup(popupnz)
         .openPopup();}
