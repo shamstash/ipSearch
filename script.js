@@ -26,11 +26,7 @@ const getLocation = async (ip) => {
 
 subButton.addEventListener("click", function () {
   getLocation(ipIn.value).then(function () {
-    if (window.screen.width <= 600) {
-      allRes.style.display = "block";
-    } else {
-      allRes.style.display = "flex";
-    }
+    allRes.style.opacity = 1;
   });
 });
 
